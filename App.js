@@ -4,12 +4,14 @@ import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 import Login from './src/Components/Login/Login.js';
 
 //Create component
-export default class Lost_found extends Component{
+export default class App extends Component{
     render(){
         return(
-            <Login />
+
+                <Login />
+            
         );
     }
 }
 
-AppRegistry.registerComponent('lost_found', () => Lost_found);
+AppRegistry.registerComponent('expo-project', () => App);
