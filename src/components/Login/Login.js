@@ -11,7 +11,7 @@ export default class Login extends Component {
 
                 <View style = {styles.logoContainer}>
                     <image style = {styles.logo}
-                    source={require('../../images/lostfound.png')}
+                    source={require('../../images/lostfound1.png')}
                     />
                     <Text style = {styles.title}>
                     An app that helps you find your lost items
