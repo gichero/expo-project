@@ -22,9 +22,23 @@ class LoginForm extends Component {
             this.setState({ loading: true });
 
             firebase.auth().signInWithEmailAndPassword(email, password)
-            .catch(() => {
-                this.setState({ error: 'Authentication Failed Miserably!!!' });
+            .then(this.onLoginSuccess.bind(this))
+            .catch(this.onLoginFail.bind(this));
+    }
 
+    onLoginFail(){
+        this.setState({
+            error: 'Authentication Failed Miserably!!!',
+            loading: false
+        });
+    }
+
+    onLoginSuccess(){
+        this.setState({
+            email: '',
+            password: '',
+            error: '',
+            loading: false
         });
     }
 
