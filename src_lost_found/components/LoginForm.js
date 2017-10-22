@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Text } from 'react-native'
 import firebase from 'firebase';
 import { Button, Card, CardSection, InputField, Spinner } from './common';
-import SignUp from './SignUp.js';
 
 
 class LoginForm extends Component {
@@ -32,6 +31,7 @@ class LoginForm extends Component {
             loading: false
         });
     }
+
 
     onLoginSuccess(){
         this.setState({

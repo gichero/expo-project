@@ -7,6 +7,7 @@ const InputField = ({ value, onChangeText, placeholder, secureTextEntry }) => {
         <View style = { containerStyle }>
 
             <TextInput
+                autoCapitalize = 'none'
                 secureTextEntry = { secureTextEntry }
                 placeholder = { placeholder }
                 autoCorrect = { false }
@@ -26,6 +27,7 @@ const styles = {
         paddingLeft: 10,
         fontSize: 18,
         lineHeight: 23,
+        borderBottomWidth: 1,
     },
 
     containerStyle: {
