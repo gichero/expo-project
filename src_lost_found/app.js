@@ -26,7 +26,6 @@ class App extends Component {
 
         });
     }
-
     renderContent(){
 
         switch (this.state.loggedIn){
@@ -41,7 +40,6 @@ class App extends Component {
                 return <Spinner size='large' />;
         }
     }
-
     render(){
         return(
             <View style = {styles.container}>
@@ -61,7 +59,6 @@ class App extends Component {
         );
     }
 }
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -84,5 +81,4 @@ const styles = StyleSheet.create({
         opacity: 0.7
     }
 });
-
 export default App;

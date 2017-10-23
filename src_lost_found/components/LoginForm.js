@@ -4,7 +4,6 @@ import firebase from 'firebase';
 import { Button, Card, CardSection, InputField, Spinner } from './common';
 import Register from './Register.js';
 
-
 class LoginForm extends Component {
 
     state = { email: '', password: '', error: '', loading: false };
@@ -30,8 +29,6 @@ class LoginForm extends Component {
             loading: false
         });
     }
-
-
     onLogInSuccess(){
         this.setState({
             email: '',
@@ -40,7 +37,6 @@ class LoginForm extends Component {
             loading: false
         });
     }
-
     renderLogInButton(){
         if(this.state.loading){
             return <Spinner size='large'/>;
@@ -51,8 +47,6 @@ class LoginForm extends Component {
             </Button>
         );
     }
-
-
     render(){
         return(
 
@@ -90,7 +84,6 @@ class LoginForm extends Component {
         );
     }
 }
-
 const styles = {
     errorTextStyle: {
             fontSize: 20,
@@ -98,6 +91,4 @@ const styles = {
             color: 'red'
     }
 };
-
-
 export default LoginForm;
