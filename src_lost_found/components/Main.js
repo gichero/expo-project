@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Button, Card, CardSection, InputField } from './common';
 
 
-class SignUp extends Component {
+class Main extends Component {
     render(){
         return(
 
@@ -36,4 +36,4 @@ class SignUp extends Component {
         );
     }
 }
-export default SignUp;
+export default Main;

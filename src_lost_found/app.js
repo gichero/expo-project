@@ -1,21 +1,45 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import firebase from 'firebase';
-import { Header } from './components/common';
+import { Header, Button, Spinner } from './components/common';
 import LoginForm from './components/LoginForm.js';
-
+import Main from './components/Main.js';
 
 class App extends Component {
+    state = { loggedIn: null };
 
     componentWillMount() {
         firebase.initializeApp({
-            apiKey: 'AIzaSyCdPN7NRi4dqtElfhN2Cd-guAKv5p-Xjjw',
-            authDomain: 'lost-and-found-7d6be.firebaseapp.com',
-            databaseURL: 'https://lost-and-found-7d6be.firebaseio.com',
-            projectId: 'lost-and-found-7d6be',
-            storageBucket: 'lost-and-found-7d6be.appspot.com',
-            messagingSenderId: '664036138349'
+    apiKey: "AIzaSyD8a_FGoKw0qaP45KEQOzBosKLN1y8TjJM",
+    authDomain: "lost-found-7ad3a.firebaseapp.com",
+    databaseURL: "https://lost-found-7ad3a.firebaseio.com",
+    projectId: "lost-found-7ad3a",
+    storageBucket: "lost-found-7ad3a.appspot.com",
+    messagingSenderId: "1053983236091"
+  });
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user){
+                this.setState({ loggedIn: true });
+            } else {
+                this.setState({ loggedIn: false });
+            }
+
         });
+    }
+
+    renderContent(){
+
+        switch (this.state.loggedIn){
+            case true:
+                return (
+                    <Button onPress={() => firebase.auth().signOut()}>Log Out</Button>
+                );
+
+            case false:
+                return <LoginForm />;
+            default:
+                return <Spinner size='large' />;
+        }
     }
 
     render(){
@@ -32,8 +56,7 @@ class App extends Component {
                         The app that helps you post and find lost items
                     </Text>
                 </View>
-                <LoginForm />
-
+                    {this.renderContent()}
             </View>
         );
     }
